@@ -35,7 +35,7 @@ const clickListner = (e) => {
 			k.play();
 			break;
 		case 'l':
-			let l = new Audio('/sounds//snare.mp3');
+			let l = new Audio('sounds/snare.mp3');
 			l.play();
 			break;
 		default:
