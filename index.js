@@ -1,13 +1,11 @@
 // The e is short for event
-
 // The simplest way to create an event is to click somewhere on the page.
-
 // When you click, a click event is triggered. This event is actually an object containing information about the action that just happened.
 
 const btn = document.querySelectorAll('.drum');
 
 const clickListner = (e) => {
-	let word = e.target.textContent;
+	let word = e.key;
 
 	switch (word) {
 		case 'w':
@@ -43,6 +41,12 @@ const clickListner = (e) => {
 	}
 };
 
-for (let i = 0; i < btn.length; i++) {
-	btn[i].addEventListener('click', clickListner);
-}
+// event will listen when the click happens
+
+// for (let i = 0; i < btn.length; i++) {
+// 	btn[i].addEventListener('click', clickListner);
+// }
+
+// event occurs when certain key is pressed
+
+document.addEventListener('keydown', clickListner);
