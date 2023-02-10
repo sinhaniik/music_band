@@ -4,9 +4,7 @@
 
 const btn = document.querySelectorAll('.drum');
 
-const clickListner = (e) => {
-	let word = e.key;
-
+const clickListner = (word) => {
 	switch (word) {
 		case 'w':
 			let w = new Audio('sounds/tom-1.mp3');
@@ -43,10 +41,16 @@ const clickListner = (e) => {
 
 // event will listen when the click happens
 
-// for (let i = 0; i < btn.length; i++) {
-// 	btn[i].addEventListener('click', clickListner);
-// }
+for (let i = 0; i < btn.length; i++) {
+	btn[i].addEventListener('click', (e) => {
+		let text = e.target.textContent;
+		clickListner(text);
+	});
+}
 
 // event occurs when certain key is pressed
 
-document.addEventListener('keydown', clickListner);
+document.addEventListener('keydown', (e) => {
+	let key = e.key;
+	clickListner(key);
+});
